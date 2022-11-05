@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <variable
+            name="country"
+            type="String" />
+
+        <variable
+            name="capital"
+            type="String" />
+
+        <variable
+            name="region"
+            type="String" />
+
+        <variable
+            name="population"
+            type="Integer" />
+
+        <variable
+            name="area"
+            type="String" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/iv_flag2"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@android:drawable/btn_radio"
+        />
+
+    <TextView
+        android:id="@+id/tv_country2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{country}"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/iv_flag2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="Country name" />
+
+    <TextView
+        android:id="@+id/tv_capital2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{capital}"
+        app:layout_constraintStart_toEndOf="@id/iv_flag2"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv_country2"
+        android:textSize="18sp"
+        tools:text="Capital name"
+        />
+
+    <TextView
+        android:id="@+id/tv_region2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{region}"
+        app:layout_constraintStart_toEndOf="@id/iv_flag2"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv_capital2"
+        android:textSize="18sp"
+        tools:text="Region name" />
+
+    <TextView
+        android:id="@+id/tv_population2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{population}"
+        app:layout_constraintStart_toEndOf="@id/iv_flag2"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv_region2"
+        android:textSize="18sp"
+        tools:text="Population number" />
+
+    <TextView
+        android:id="@+id/tv_area2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{area}"
+        app:layout_constraintStart_toEndOf="@id/iv_flag2"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv_population2"
+        android:textSize="18sp"
+        tools:text="Area name" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO BACK"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_area2"
+        app:layout_constraintVertical_bias="0.098" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
