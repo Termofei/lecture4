@@ -5,9 +5,9 @@ import retrofit2.Call
 class NameRepository constructor(
     private val nameService: NameService
 ) {
-    fun getNames(): Call<List<Name>>? {
+    fun getNames(countryName: String): Call<List<Name>>? {
         return try {
-            val names = nameService.getNames()
+            val names = nameService.getNames("country")
             names
         } catch (e: Exception) {
             null

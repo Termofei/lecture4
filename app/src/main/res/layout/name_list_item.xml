@@ -18,7 +18,7 @@
 
         <variable
             name="population"
-            type="Integer" />
+            type="String" />
 
         <variable
             name="area"

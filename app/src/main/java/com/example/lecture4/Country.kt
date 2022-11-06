@@ -1,4 +1,5 @@
 package com.example.lecture4
+import android.graphics.Region
 
 data class Country(
     var name: String,
@@ -13,8 +14,8 @@ data class Flag (
 data class Name(
     var name: String,
     var capital: String,
-    var flags: Flag,
     var region: String,
     var population: Int,
-    var area: String
+    var area: Int,
+    var flags: Flag
 )

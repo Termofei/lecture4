@@ -2,15 +2,17 @@ package com.example.lecture4
 
 import android.content.Intent
 import android.os.Bundle
+import android.telecom.Call.Details
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.lecture4.databinding.CountryListItemBinding
+import com.google.android.material.snackbar.Snackbar
 
 
-class CountryAdapter(val countries: List<Country>): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
+class CountryAdapter( private val countries: List<Country>): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
     class CountryViewHolder(val binding: CountryListItemBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -40,6 +42,12 @@ class CountryAdapter(val countries: List<Country>): RecyclerView.Adapter<Country
                 .into(ivFlag)
 
             holder.binding.root.setOnClickListener {
+                Snackbar.make(it, currentCountry.name, Snackbar.LENGTH_LONG).show()
+                val activity = it.context as AppCompatActivity
+                val transaction = activity.supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.container1, NameFragment(currentCountry.name))
+                transaction.addToBackStack("first_transaction")
+                transaction.commit()
 
             }
         }
